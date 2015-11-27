@@ -45,11 +45,11 @@ class St_gui:
         self.textWhite = self.c.create_text(self.canvas_width/6, self.canvas_height/7*5, text=self.stwhite, font=self.font_header2, fill="black")
         self.textYellow = self.c.create_text(self.canvas_width/6, self.canvas_height/7*6, text=self.styellow, font=self.font_header2, fill="black")
 
-        self.textBluescore = self.c.create_text(self.canvas_width/4, self.canvas_height/7*2, text="0", font=self.font_header2, fill="black")
-        self.textGreenscore = self.c.create_text(self.canvas_width/4*3, self.canvas_height/7*3, text="0", font=self.font_header2, fill="black")
-        self.textRedscore = self.c.create_text(self.canvas_width/4, self.canvas_height/7*4, text="0", font=self.font_header2, fill="black")
-        self.textWhitescore = self.c.create_text(self.canvas_width/4*3, self.canvas_height/7*5, text="0", font=self.font_header2, fill="black")
-        self.textYellowscore = self.c.create_text(self.canvas_width/4*3, self.canvas_height/7*6, text="0", font=self.font_header2, fill="black")
+        self.textBluescore = self.c.create_text(self.canvas_width/6*5, self.canvas_height/7*2, text="0", font=self.font_header2, fill="black")
+        self.textGreenscore = self.c.create_text(self.canvas_width/6*5, self.canvas_height/7*3, text="0", font=self.font_header2, fill="black")
+        self.textRedscore = self.c.create_text(self.canvas_width/6*5, self.canvas_height/7*4, text="0", font=self.font_header2, fill="black")
+        self.textWhitescore = self.c.create_text(self.canvas_width/6*5, self.canvas_height/7*5, text="0", font=self.font_header2, fill="black")
+        self.textYellowscore = self.c.create_text(self.canvas_width/6*5, self.canvas_height/7*6, text="0", font=self.font_header2, fill="black")
 
         self.textTimer = self.c.create_text(self.canvas_width/2, self.canvas_height/2, text="COUNTDOWN", font=self.font_header, fill="red")
 
