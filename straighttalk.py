@@ -13,8 +13,10 @@ joypad.initGui()
 
 # add callbacks for GPIo events
 # bouncetime = number of milliseconds before registering another button push
-GPIO.add_event_detect(Joypadio.GPIOteamA, GPIO.RISING, callback=joyio.registerVote, bouncetime=200)
-GPIO.add_event_detect(Joypadio.GPIOteamB, GPIO.RISING, callback=joyio.registerVote, bouncetime=200)
-
+GPIO.add_event_detect(St_io.GPIOblue, GPIO.RISING, callback=stio.registerVote, bouncetime=200)
+GPIO.add_event_detect(St_io.GPIOgreen, GPIO.RISING, callback=stio.registerVote, bouncetime=200)
+GPIO.add_event_detect(St_io.GPIOred, GPIO.RISING, callback=stio.registerVote, bouncetime=200)
+GPIO.add_event_detect(St_io.GPIOwhite, GPIO.RISING, callback=stio.registerVote, bouncetime=200)
+GPIO.add_event_detect(St_io.GPIOyellow, GPIO.RISING, callback=stio.registerVote, bouncetime=200)
 
 root.mainloop()
