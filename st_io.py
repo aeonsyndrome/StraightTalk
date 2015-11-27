@@ -36,11 +36,11 @@ class St_io:
         elif (channel == self.GPIOgreen):
             self.scoregreen = self.scoregreen + 1;
         elif (channel == self.GPIOred):
-            self.GPIOred = self.GPIOred + 1;
+            self.scorered = self.scorered + 1;
         elif (channel == self.GPIOwhite):
-            self.GPIOwhite = self.GPIOwhite + 1;
+            self.scorewhite = self.scorewhite + 1;
         elif (channel == self.GPIOyellow):
-            self.GPIOyellow = self.GPIOyellow + 1;
+            self.scoreyellow = self.scoreyellow + 1;
         else:
             print("unknown channel input detected on GPIO pin:" + channel)
     

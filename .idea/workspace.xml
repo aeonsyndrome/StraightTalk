@@ -26,11 +26,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="straighttalk.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="straighttalk.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/straighttalk.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+                <state vertical-scroll-proportion="0.2519501">
+                  <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
                   <folding>
                     <element signature="e#27#48#0" expanded="true" />
                   </folding>
@@ -41,8 +41,8 @@
           <file leaf-file-name="st_io.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/st_io.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-28.115385">
-                  <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+                <state vertical-scroll-proportion="-13.076923">
+                  <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -50,11 +50,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="st_gui.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="st_gui.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/st_gui.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6021841">
-                  <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
                   <folding>
                     <element signature="e#11#32#0" expanded="true" />
                   </folding>
@@ -117,9 +117,9 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/straighttalk.py" />
-        <option value="$PROJECT_DIR$/st_io.py" />
         <option value="$PROJECT_DIR$/questions/question1.txt" />
         <option value="$PROJECT_DIR$/st_gui.py" />
+        <option value="$PROJECT_DIR$/st_io.py" />
       </list>
     </option>
   </component>
@@ -519,20 +519,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/straighttalk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding>
-            <element signature="e#27#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/st_io.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.115385">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -541,10 +531,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/st_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6021841">
-          <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
           <folding>
             <element signature="e#11#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/straighttalk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2519501">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#27#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
