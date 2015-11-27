@@ -2,6 +2,7 @@
 from Tkinter import *
 import RPi.GPIO as GPIO
 from st_io import St_io
+from st_gui import St_gui
 
 # Import local libraries
 root = Tk()
