@@ -54,7 +54,7 @@ class St_gui:
         self.textTimer = self.c.create_text(self.canvas_width/2, self.canvas_height/2, text="COUNTDOWN", font=self.font_header, fill="red")
 
         self.updateUI()
-        self.countdownTimer()
+        # self.countdownTimer()
 
         self.c.pack()
 
@@ -68,13 +68,16 @@ class St_gui:
     def resetCountdownTimer(self):
         self.timeRemaining = self.timerSeconds
 
-    def timerReacher(self):
+    def timerReached(self):
         'something'
         # dislpay the voting results screen, plus a countdown to the next vote session
 
     def updateUI(self):
         'update the UI to display scores every 200ms'
-        self.c.itemconfig(self.textTeamAscore, text = self.io.scoreA)
-        self.c.itemconfig(self.textTeamBscore, text = self.io.scoreB)
+        self.c.itemconfig(self.textBluescore, text = self.io.scoreblue)
+        self.c.itemconfig(self.textGreenscore, text = self.io.scoregreen)
+        self.c.itemconfig(self.textRedscore, text = self.io.scorered)
+        self.c.itemconfig(self.textYellowscore, text = self.io.scoreyellow)
+        self.c.itemconfig(self.textWhitescore, text = self.io.scorewhite)
         self.c.itemconfig(self.textTimer, text= self.timeRemaining);
         self.root.after(200,self.updateUI)
