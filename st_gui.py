@@ -3,16 +3,13 @@ from Tkinter import *
 from PIL import Image, ImageTk
 import tkFont
 
-class St_Event(object):
-    pass
-
 class St_gui:
-    'UI controller for joypad voting system'
+    'UI controller for st voting system'
 
-    # count down timer - change this value if you want
-    timerSeconds = 300
+    # seconds to show results
+    timerSeconds = 5
 
-    # init using the root Tk() instance, and the Joypadio library
+    # init using the root Tk() instance, and the st_io library
     def __init__(self, root, io):
         self.root = root
         self.io = io
@@ -20,21 +17,39 @@ class St_gui:
         self.canvas_height = root.winfo_screenheight()-40
         self.canvas_width  = root.winfo_screenwidth()
         self.font_header = tkFont.Font(family="Helvetica", size=100, weight="bold")
+        self.font_header2 = tkFont.Font(family="Helvetica", size=50, weight="bold")
 
     def initGui(self):
         self.c = Canvas(self.root, width=self.canvas_width, height=self.canvas_height)
 
-        # make everything centered, that way we can deal with different resolutions easier insetad of
+        # make everything centered, that way we can deal with different resolutions easier instead of
         # anchoring everything to the top left
-        self.imageBG = Image.open( "resources/bg.jpg")
-
+        self.imageBG = Image.open("resources/bg.jpg")
         self.photoBG = ImageTk.PhotoImage(self.imageBG)
         self.bg = self.c.create_image(self.canvas_width/2,self.canvas_height/2,image=self.photoBG)
 
-        self.textTeamA = self.c.create_text(self.canvas_width/4, 100, text="Team A", font=self.font_header, fill="white")
-        self.textTeamB = self.c.create_text(self.canvas_width/4*3, 100, text="Team B", font=self.font_header, fill="white")
-        self.textTeamAscore = self.c.create_text(self.canvas_width/4, 250, text="0", font=self.font_header, fill="white")
-        self.textTeamBscore = self.c.create_text(self.canvas_width/4*3, 250, text="0", font=self.font_header, fill="white")
+        self.questions = open('questions/question1.txt', 'r')
+        self.stquestion = self.questions.readline()
+        self.stblue = self.questions.readline()
+        self.stgreen = self.questions.readline()
+        self.stred = self.questions.readline()
+        self.stwhite = self.questions.readline()
+        self.styellow = self.questions.readline()
+        self.questions.close()
+
+        self.textQuestion = self.c.create_text(self.canvas_width/6, self.canvas_height/7, text=self.stquestion, font=self.font_header, fill="black")
+
+        self.textBlue = self.c.create_text(self.canvas_width/6, self.canvas_height/7*2, text=self.stblue, font=self.font_header2, fill="black")
+        self.textGreen = self.c.create_text(self.canvas_width/6, self.canvas_height/7*3, text=self.stgreen, font=self.font_header2, fill="black")
+        self.textRed = self.c.create_text(self.canvas_width/6, self.canvas_height/7*4, text=self.stred, font=self.font_header2, fill="black")
+        self.textWhite = self.c.create_text(self.canvas_width/6, self.canvas_height/7*5, text=self.stwhite, font=self.font_header2, fill="black")
+        self.textYellow = self.c.create_text(self.canvas_width/6, self.canvas_height/7*6, text=self.styellow, font=self.font_header2, fill="black")
+
+        self.textBluescore = self.c.create_text(self.canvas_width/4, self.canvas_height/7*2, text="0", font=self.font_header2, fill="black")
+        self.textGreenscore = self.c.create_text(self.canvas_width/4*3, self.canvas_height/7*3, text="0", font=self.font_header2, fill="black")
+        self.textRedscore = self.c.create_text(self.canvas_width/4, self.canvas_height/7*4, text="0", font=self.font_header2, fill="black")
+        self.textWhitescore = self.c.create_text(self.canvas_width/4*3, self.canvas_height/7*5, text="0", font=self.font_header2, fill="black")
+        self.textYellowscore = self.c.create_text(self.canvas_width/4*3, self.canvas_height/7*6, text="0", font=self.font_header2, fill="black")
 
         self.textTimer = self.c.create_text(self.canvas_width/2, self.canvas_height/2, text="COUNTDOWN", font=self.font_header, fill="red")
 

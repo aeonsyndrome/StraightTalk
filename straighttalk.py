@@ -8,9 +8,9 @@ from st_gui import St_gui
 root = Tk()
 stio = St_io()
 
-joypad = Joypadui(root,joyio)
+straighttalk = St_ui(root,stio)
 
-joypad.initGui()
+straighttalk.initGui()
 
 # add callbacks for GPIo events
 # bouncetime = number of milliseconds before registering another button push

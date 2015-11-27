@@ -2,9 +2,6 @@ import os
 import time
 import RPi.GPIO as GPIO
 
-class St_Event(object):
-    pass
-
 class St_io:
     'hardware I/O class for StraightTalk voting system'
 
@@ -31,25 +28,19 @@ class St_io:
         self.scorered = 0
         self.scorewhite = 0
         self.scoreyellow = 0
-        self.callbacks = []
                    
     #Record a vote agains the given object [CORRECT THIS]
     def registerVote(self,channel):
         if (channel == self.GPIOblue):
             self.scoreblue = self.scoreblue +1;
-            self.fire(action='vote', team='blue');
         elif (channel == self.GPIOgreen):
             self.scoregreen = self.scoregreen + 1;
-            self.fire(action='vote', team='green');
         elif (channel == self.GPIOred):
             self.GPIOred = self.GPIOred + 1;
-            self.fire(action='vote', team='red');
         elif (channel == self.GPIOwhite):
             self.GPIOwhite = self.GPIOwhite + 1;
-            self.fire(action='vote', team='white');
         elif (channel == self.GPIOyellow):
             self.GPIOyellow = self.GPIOyellow + 1;
-            self.fire(action='vote', team='yellow');
         else:
             print("unknown channel input detected on GPIO pin:" + channel)
     
@@ -59,17 +50,7 @@ class St_io:
         self.scorered = 0
         self.scorewhite = 0
         self.scoreyellow = 0
-        
-    #callback handling
-    def subscribe(self, callback):
-        self.callbacks.append(callback)
-    def fire(self, **attrs):
-        e = St_Event()
-        e.source = self;
-        for k, v in attrs.iteritems():
-            setattr(e,k,v)
-        for fn in self.callbacks:
-            fn(e)
+
 
 
 """
