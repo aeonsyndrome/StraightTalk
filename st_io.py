@@ -6,22 +6,24 @@ class St_io:
     'hardware I/O class for StraightTalk voting system'
 
     #choose your GPIO pins here
-    GPIOblue = 7
-    GPIOgreen = 8
-    GPIOred = 9
-    GPIOwhite = 10
-    GPIOyellow = 11
+    GPIOblue = 3
+    GPIOgreen = 2
+    GPIOred = 4
+    GPIOwhite = 17
+    GPIOyellow = 27
+    lastTime = 0
     
     def __init__(self):
         GPIO.setmode(GPIO.BCM)
-        GPIO.setwarnings(False) 
+        #GPIO.setwarnings(False) 
         GPIO.cleanup()
 
-        GPIO.setup(self.GPIOblue, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-        GPIO.setup(self.GPIOgreen, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-        GPIO.setup(self.GPIOred, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-        GPIO.setup(self.GPIOwhite, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-        GPIO.setup(self.GPIOyellow, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        GPIO.setup(self.GPIOblue, GPIO.IN)
+        GPIO.setup(self.GPIOgreen, GPIO.IN)
+        # GPIO.setup(self.GPIOred, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        GPIO.setup(self.GPIOred, GPIO.IN)
+        GPIO.setup(self.GPIOwhite, GPIO.IN)
+        GPIO.setup(self.GPIOyellow, GPIO.IN)
 
         self.scoreblue = 0
         self.scoregreen = 0
@@ -30,19 +32,31 @@ class St_io:
         self.scoreyellow = 0
                    
     #Record a vote agains the given object [CORRECT THIS]
-    def registerVote(self,channel):
-        if (channel == self.GPIOblue):
+    def registerVoteBlue(self,channel):
+        if time.time() - self.lastTime > 5:
             self.scoreblue = self.scoreblue +1;
-        elif (channel == self.GPIOgreen):
+            print("blue pressed");
+            self.lastTime = time.time();
+    def registerVoteGreen(self, channel):
+        if time.time() - self.lastTime > 5:
             self.scoregreen = self.scoregreen + 1;
-        elif (channel == self.GPIOred):
+            print("green pressed");
+            self.lastTime = time.time();
+    def registerVoteRed(self, channel):
+        if time.time() - self.lastTime > 5:
             self.scorered = self.scorered + 1;
-        elif (channel == self.GPIOwhite):
+            print("red pressed");
+            self.lastTime = time.time();
+    def registerVoteWhite(self, channel):
+        if time.time() - self.lastTime > 5:
             self.scorewhite = self.scorewhite + 1;
-        elif (channel == self.GPIOyellow):
+            print("white pressed");
+            self.lastTime = time.time();
+    def registerVoteYellow(self, channel):
+        if time.time() - self.lastTime > 5:
             self.scoreyellow = self.scoreyellow + 1;
-        else:
-            print("unknown channel input detected on GPIO pin:" + channel)
+            print("yellow pressed");
+            self.lastTime = time.time();
     
     def resetScores(self):
         self.scoreblue = 0
